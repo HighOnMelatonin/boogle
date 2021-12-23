@@ -44,7 +44,7 @@ async def on_message(message):
             return
             
         if query == 'help' or query == 'h':
-            await message.channel.send(embed = discord.Embed(title = help))
+            await message.channel.send(embed = discord.Embed(title = "Help", description = help))
             return
 
         if query.lower() in greetings:
