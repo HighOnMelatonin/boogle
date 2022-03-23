@@ -12,7 +12,7 @@ def search(term, num_results=10, lang="en", proxy=None):
     def fetch_results(search_term, number_results, language_code):
         escaped_search_term = search_term.replace(' ', '+')
 
-        yt_url = f"https://www.youtube.com/results?search_query={escaped_search_term}"
+        google_url = f"https://www.youtube.com/results?search_query={escaped_search_term}"
 
         proxies = None
         if proxy:
@@ -21,7 +21,7 @@ def search(term, num_results=10, lang="en", proxy=None):
             else:
                 proxies = {"http":proxy}
 
-        response = get(yt_url, headers=usr_agent, proxies=proxies)    
+        response = get(google_url, headers=usr_agent, proxies=proxies)    
         response.raise_for_status()
 
         return response.text
